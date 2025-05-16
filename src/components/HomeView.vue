@@ -1,70 +1,7 @@
 <template>
   <div>
     <div class="relative w-full h-[900-px]">
-      <div
-        id="navbar"
-        class="w-full fixed top-0 left-0 z-10 px-4 py-3 transition-colors duration-100 bg-transparent text-white font-semibold"
-      >
-        <div
-          class="max-w-screen-xl mx-auto flex justify-between items-center relative"
-        >
-          <!-- Logo -->
-          <div class="flex items-center space-x-3">
-            <img src="../assets/images/logo.png" alt="Logo" class="w-8 h-8" />
-            <p id="logotext" class="text-xl font-bold">Startup Landing</p>
-          </div>
-
-          <!-- Desktop Nav -->
-          <nav id="rout" class="hidden lg:flex space-x-8">
-            <router-link to="#home">Home</router-link>
-            <router-link to="#features">Features</router-link>
-            <router-link to="#testimonial">Testimonial</router-link>
-            <router-link to="#pricing">Pricing</router-link>
-          </nav>
-
-          <!-- Button -->
-          <button
-            id="butn"
-            class=" border border-white rounded-full w-[150px] h-[46px] hover:bg-white hover:text-black"
-          >
-            Get Started
-          </button>
-
-          <!-- Mobile Menu Toggle -->
-          <button @click="toggleMenu" class="lg:hidden focus:outline-none">
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
-
-          <!-- Mobile Menu -->
-          <div
-            v-if="menuOpen"
-            class="absolute top-[70px] left-0 w-full bg-white bg-opacity-90 text-black flex flex-col space-y-4 px-4 py-6 lg:hidden"
-          >
-            <router-link to="#home" @click="closeMenu">Home</router-link>
-            <router-link to="#features" @click="closeMenu"
-              >Features</router-link
-            >
-            <router-link to="#testimonial" @click="closeMenu"
-              >Testimonial</router-link
-            >
-            <router-link to="#pricing" @click="closeMenu">Pricing</router-link>
-           
-          </div>
-        </div>
-      </div>
+      <Navbar/>
       <div
         id="home"
         class="h-[900px] bg-[#1F3E76] bg-opacity-50 rounded-br-[250px] flex"
@@ -196,6 +133,7 @@ import qwe from "./QualityFeat.vue";
 import Faq from "./Faq.vue";
 import feat from "./Feat.vue";
 import Pricing from "./Pricing.vue";
+import Navbar from "./Navbar.vue";
 
 import { ref } from "vue";
 const isOpen = ref(false);
